@@ -8,6 +8,7 @@ import { useParams, useSearchParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { fetchProductsByFilters } from "../redux/slices/productSlice";
 import { useSelector } from "react-redux";
+import { clearAllBrowserData } from '../utils/cacheUtils';
 
 const CollectionPage = () => {
   const { collection } = useParams();

@@ -19,6 +19,14 @@ const PORT = process.env.PORT || 9000;
 const app = express();
 app.use(express.json());
 
+// Add cache control middleware
+app.use((req, res, next) => {
+    res.set('Cache-Control', 'no-store, no-cache, must-revalidate, private');
+    res.set('Pragma', 'no-cache');
+    res.set('Expires', '0');
+    next();
+});
+
 // CORS Configuration
 const allowedOrigins = [
     'https://pawshop007.onrender.com',
@@ -26,7 +34,8 @@ const allowedOrigins = [
     'https://pawshop007-1-onrender-com.vercel.app',
     'http://localhost:5173',
     'http://localhost:3000',
-    // Add your new frontend URLs here
+    'https://pettshop-frontend.onrender.com',
+    'https://pettshop-prankur-frontend.onrender.com',  // Adding your specific frontend URL
     process.env.FRONTEND_URL, // Will be added from environment variable
 ];
 
