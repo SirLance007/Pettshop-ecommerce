@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { FaPaw, FaBone, FaHeart, FaShieldAlt } from 'react-icons/fa';
 import { MdPets, MdLocalShipping } from 'react-icons/md';
 import { GiDogBowl } from 'react-icons/gi';
+import ProfilePicture from '../assets/ProfilePicture.jpg';
 
 const About = () => {
   const features = [
@@ -117,9 +118,13 @@ const About = () => {
             >
               <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden group-hover:scale-110 transition-transform duration-300">
                 <img 
-                  src="src/assets/ProfilePicture.jpg" 
+                  src={ProfilePicture}
                   alt="Prankur Sharma" 
                   className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = `https://ui-avatars.com/api/?name=Prankur+Sharma&background=8B4513&color=fff&size=128`;
+                  }}
                 />
               </div>
               <h3 className="text-xl font-bold text-pet-brown mb-1">{teamMembers[0].name}</h3>
