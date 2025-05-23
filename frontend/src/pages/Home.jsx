@@ -52,10 +52,10 @@ const Home = () => {
   ];
 
   useEffect(() => {
-    // Fetch popular pet products
+    // Fetch popular products sorted by rating
     dispatch(
       fetchProductsByFilters({
-        category: "Dogs",
+        sortBy: "popularity",
         limit: 8,
       })
     );
