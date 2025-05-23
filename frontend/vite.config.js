@@ -8,6 +8,21 @@ export default defineConfig({
     outDir: 'dist',
     sourcemap: false,
     minify: true,
+    chunkSizeWarningLimit: 1000,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: [
+            'react',
+            'react-dom',
+            'react-router-dom',
+            'react-redux',
+            '@reduxjs/toolkit'
+          ],
+          lottie: ['lottie-react', 'lottie-web'],
+        }
+      }
+    }
   },
   server: {
     port: 3000,
