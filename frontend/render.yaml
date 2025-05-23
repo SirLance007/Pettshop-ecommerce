@@ -1,9 +1,0 @@
-services:
-  - type: web
-    name: pettshop-frontend
-    env: static
-    buildCommand: npm install && npm run build
-    publishDir: dist
-    envVars:
-      - key: VITE_BACKEND_URL
-        value: https://pettshop-ecommerce.onrender.com 
