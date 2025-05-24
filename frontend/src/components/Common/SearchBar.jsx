@@ -6,6 +6,7 @@ import {
   setFilters,
 } from "../../redux/slices/productSlice";
 import { useNavigate } from "react-router-dom";
+import VoiceSearch from "../VoiceSearch";
 
 const SearchBar = ({ autoFocus = false, isMobile = false, onClose }) => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -40,6 +41,13 @@ const SearchBar = ({ autoFocus = false, isMobile = false, onClose }) => {
     handleSearchToggle();
   };
 
+  const handleVoiceSearchResult = (transcript) => {
+    setSearchTerm(transcript);
+    dispatch(setFilters({ search: transcript }));
+    dispatch(fetchProductsByFilters({ search: transcript }));
+    navigate(`/collections/all?search=${transcript}`);
+  };
+
   const handleKeyDown = (e) => {
     if (e.key === 'Escape') {
       handleSearchToggle();
@@ -49,23 +57,7 @@ const SearchBar = ({ autoFocus = false, isMobile = false, onClose }) => {
   if (isMobile) {
     return (
       <form onSubmit={handleSearch} className="w-full">
-        <div className="relative flex items-center">
-          <input
-            ref={inputRef}
-            type="text"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            onKeyDown={handleKeyDown}
-            placeholder="Search for pet products..."
-            className="w-full bg-pet-beige/20 text-pet-brown placeholder:text-pet-brown/50 px-5 py-3 pr-12 rounded-xl border border-pet-brown/10 focus:border-pet-brown/30 focus:ring-2 focus:ring-pet-brown/20 outline-none transition-all duration-300"
-            autoFocus={autoFocus}
-          />
-          <button
-            type="submit"
-            className="absolute right-2 p-2 text-pet-brown hover:text-pet-brown/70 transition-colors duration-300"
-          >
-            <HiMagnifyingGlass className="w-5 h-5" />
-          </button>
+                <div className="relative flex items-center">          <input            ref={inputRef}            type="text"            value={searchTerm}            onChange={(e) => setSearchTerm(e.target.value)}            onKeyDown={handleKeyDown}            placeholder="Search for pet products..."            className="w-full bg-pet-beige/20 text-pet-brown placeholder:text-pet-brown/50 px-5 py-3 pr-24 rounded-xl border border-pet-brown/10 focus:border-pet-brown/30 focus:ring-2 focus:ring-pet-brown/20 outline-none transition-all duration-300"            autoFocus={autoFocus}          />          <div className="absolute right-2 flex items-center gap-1">            <VoiceSearch onSearchResult={handleVoiceSearchResult} />            <button              type="submit"              className="p-1.5 rounded-xl bg-pet-beige/20 text-pet-brown hover:bg-pet-brown/10 transition-colors duration-300"            >              <HiMagnifyingGlass className="w-5 h-5" />            </button>          </div>
         </div>
       </form>
     );
@@ -74,7 +66,7 @@ const SearchBar = ({ autoFocus = false, isMobile = false, onClose }) => {
   return (
     <div className={`relative ${isOpen ? 'w-full' : 'w-auto'}`}>
       {isOpen ? (
-        <form onSubmit={handleSearch} className="relative flex items-center w-full">
+        <form onSubmit={handleSearch} className="relative flex items-center w-full gap-2">
           <input
             ref={inputRef}
             type="text"
@@ -85,21 +77,7 @@ const SearchBar = ({ autoFocus = false, isMobile = false, onClose }) => {
             className="w-full bg-pet-beige/20 text-pet-brown placeholder:text-pet-brown/50 pl-5 pr-20 py-2.5 rounded-full border border-pet-brown/10 focus:border-pet-brown/30 focus:ring-2 focus:ring-pet-brown/20 outline-none transition-all duration-300"
             autoFocus
           />
-          <div className="absolute right-2 flex items-center gap-1">
-            <button
-              type="submit"
-              className="p-1.5 text-pet-brown hover:text-pet-brown/70 transition-colors duration-300"
-            >
-              <HiMagnifyingGlass className="w-5 h-5" />
-            </button>
-            <button
-              type="button"
-              onClick={handleSearchToggle}
-              className="p-1.5 text-pet-brown hover:text-pet-brown/70 transition-colors duration-300"
-            >
-              <HiMiniXMark className="w-5 h-5" />
-            </button>
-          </div>
+                    <div className="absolute right-2 flex items-center gap-1">            <VoiceSearch onSearchResult={handleVoiceSearchResult} />            <button              type="submit"              className="p-1.5 rounded-xl bg-pet-beige/20 text-pet-brown hover:bg-pet-brown/10 transition-colors duration-300"            >              <HiMagnifyingGlass className="w-5 h-5" />            </button>            <button              type="button"              onClick={handleSearchToggle}              className="p-1.5 rounded-xl bg-pet-beige/20 text-pet-brown hover:bg-pet-brown/10 transition-colors duration-300"            >              <HiMiniXMark className="w-5 h-5" />            </button>          </div>
         </form>
       ) : (
         <button
