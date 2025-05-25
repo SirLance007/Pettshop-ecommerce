@@ -16,6 +16,9 @@ A modern, full-stack e-commerce platform specialized for pet products. PawShop o
 - React Icons
 - Redux Toolkit (for state management)
 - Axios (for API requests)
+- Sonner (for toast notifications)
+- Web Speech API (for voice assistant)
+- React Speech Recognition (for voice commands)
 
 ### Backend
 - Node.js
@@ -27,28 +30,65 @@ A modern, full-stack e-commerce platform specialized for pet products. PawShop o
 
 ## ✨ Features
 
-- **User Authentication**: Secure login and registration system
+- **Voice Assistant**: 
+  - Voice-controlled navigation
+  - Product search by voice
+  - Hands-free shopping experience
+  - Voice commands for cart management
+  - Accessibility support
+  - Natural language processing
+- **User Authentication**: 
+  - Secure login and registration system
+  - Guest user functionality
+  - Persistent sessions
 - **Product Management**: 
   - Browse products by category
-  - Filter and search functionality
-  - Detailed product views
+  - Advanced filter and search functionality
+  - Detailed product views with multiple images
+  - Size and color selection
+  - Similar products recommendations
 - **Shopping Cart**: 
   - Add/remove items
   - Update quantities
-  - Calculate totals
+  - Size and color variants
+  - Real-time price calculations
+  - Guest cart functionality
+- **Wishlist**:
+  - Add/remove products
+  - Persistent wishlist storage
+  - Quick add to cart from wishlist
+- **Product Details**:
+  - Image gallery with thumbnails
+  - Dynamic size and color selection
+  - Quantity adjustment
+  - Sale price display
+  - Product features and benefits
+  - Free shipping indicators
+- **User Experience**:
+  - Toast notifications for actions
+  - Animated UI elements
+  - Loading states with animations
+  - Responsive image galleries
+  - Intuitive size/color selectors
 - **Admin Dashboard**:
   - Product management
   - Order management
   - User management
-- **Responsive Design**: Works seamlessly on desktop and mobile devices
+  - Sales analytics
+- **Responsive Design**: 
+  - Works seamlessly on desktop and mobile devices
+  - Optimized image loading
+  - Touch-friendly interfaces
 - **Modern UI/UX**:
   - Pet-themed styling
-  - Smooth animations
+  - Smooth animations and transitions
   - Intuitive navigation
+  - Interactive product cards
 - **Security**:
   - JWT authentication
   - Protected routes
   - Secure API endpoints
+  - Guest user data protection
 
 ## 🛠️ Installation & Setup
 
