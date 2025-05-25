@@ -85,7 +85,7 @@ export default {
         'float-slow': 'float 4s ease-in-out infinite',
         'spin-slow': 'spin 6s linear infinite',
         'spin-slow-delayed': 'spin 6s linear 3s infinite',
-        'bounce-gentle': 'bounce-gentle 2s ease-in-out infinite',
+        'bounce-gentle': 'bounce-gentle 1s infinite',
         'gradient-x': 'gradient-x 15s ease infinite',
         'fade-in': 'fade-in 0.5s ease-out',
         'fade-in-up': 'fade-in-up 0.5s ease-out',

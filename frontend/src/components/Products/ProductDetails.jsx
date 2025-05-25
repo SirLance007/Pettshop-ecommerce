@@ -10,6 +10,7 @@ import {
   fetchSimilarProducts,
 } from "../../redux/slices/productSlice";
 import { addToCart } from "../../redux/slices/cartSlice";
+import { addToWishlist, removeFromWishlist } from "../../redux/slices/wishlistSlice";
 import { FaPaw, FaBone, FaShoppingCart, FaMinus, FaPlus, FaHeart } from "react-icons/fa";
 import { MdPets, MdLocalShipping } from "react-icons/md";
 import { RiRefund2Line } from "react-icons/ri";
@@ -21,6 +22,7 @@ const ProductDetails = ({ productId }) => {
     (state) => state.products
   );
   const { user, guestId } = useSelector((state) => state.auth);
+  const { items: wishlistItems } = useSelector((state) => state.wishlist);
   const [mainImage, setmainImage] = useState("");
   const [selectedSize, setSelectedSize] = useState("");
   const [selectedColor, setSelectedColor] = useState("");
@@ -30,6 +32,7 @@ const ProductDetails = ({ productId }) => {
   const location = useLocation();
 
   const productFetchId = productId || id;
+  const isInWishlist = wishlistItems.some(item => item._id === selectedProduct?._id);
 
   useEffect(() => {
     if (productFetchId) {
@@ -80,6 +83,16 @@ const ProductDetails = ({ productId }) => {
         });
       })
       .finally(() => setIsButtonDisabled(false));
+  };
+
+  const handleWishlistToggle = () => {
+    if (isInWishlist) {
+      dispatch(removeFromWishlist(selectedProduct._id));
+      toast.success("Removed from wishlist", { duration: 1000 });
+    } else {
+      dispatch(addToWishlist(selectedProduct));
+      toast.success("Added to wishlist", { duration: 1000 });
+    }
   };
 
   if (loading) return (
@@ -312,11 +325,14 @@ const ProductDetails = ({ productId }) => {
                   <button
                     onMouseEnter={() => setIsWishlistHovered(true)}
                     onMouseLeave={() => setIsWishlistHovered(false)}
-                    className="p-3 rounded-xl bg-pet-beige/20 text-pet-brown hover:bg-pet-brown/10 transition-colors duration-300"
+                    onClick={handleWishlistToggle}
+                    className={`p-3 rounded-xl transition-colors duration-300 ${
+                      isInWishlist 
+                        ? 'bg-red-500 text-white hover:bg-red-600' 
+                        : 'bg-pet-beige/20 text-pet-brown hover:bg-pet-brown/10'
+                    }`}
                   >
-                    <FaHeart className={`w-5 h-5 transition-colors duration-300 ${
-                      isWishlistHovered ? 'text-red-500' : 'text-pet-brown'
-                    }`} />
+                    <FaHeart className="w-5 h-5" />
                   </button>
                 </div>
 

@@ -573,4 +573,153 @@ const products = [
   }
 ];
 
-module.exports = products;
+// Additional 60 products
+const additionalProducts = [
+  {
+    name: "Premium Dog Harness",
+    description: "Durable and comfortable harness with reflective strips for night safety. Easy to put on and adjust.",
+    price: 34.99,
+    discountPrice: 29.99,
+    countInStock: 45,
+    sku: "DOG-HR-021",
+    category: "Dog Accessories",
+    brand: "PawStyle",
+    sizes: ["XS", "S", "M", "L", "XL"],
+    colors: ["Black", "Red", "Blue", "Green"],
+    collections: "Safety Gear",
+    material: "Nylon",
+    gender: "Unisex",
+    petType: "Dogs",
+    images: [
+      {
+        url: "https://images.unsplash.com/photo-1640130960412-af425bde2be3",
+        altText: "Premium Dog Harness Front View"
+      },
+      {
+        url: "https://images.unsplash.com/photo-1697939829612-f2ee98421a53",
+        altText: "Premium Dog Harness Side View"
+      }
+    ],
+    rating: 4.7,
+    numReviews: 28
+  },
+  {
+    name: "Luxury Cat Tree",
+    description: "Multi-level cat tree with scratching posts, hideaways, and plush platforms. Perfect for multiple cats.",
+    price: 129.99,
+    discountPrice: 109.99,
+    countInStock: 20,
+    sku: "CAT-TR-022",
+    category: "Cat Furniture",
+    brand: "FancyFeline",
+    sizes: ["One Size"],
+    colors: ["Beige", "Gray", "Brown"],
+    collections: "Luxury Living",
+    material: "Plush, Sisal Rope",
+    gender: "Unisex",
+    petType: "Cats",
+    images: [
+      {
+        url: "https://plus.unsplash.com/premium_photo-1664371206022-59b8607e00ac",
+        altText: "Luxury Cat Tree"
+      },
+      {
+        url: "https://images.unsplash.com/photo-1619682488107-c0791e9be98d",
+        altText: "Cat on Tree"
+      }
+    ],
+    rating: 4.8,
+    numReviews: 35
+  },
+  {
+    name: "Bird Play Gym",
+    description: "Interactive play gym with various perches, toys, and activities. Promotes exercise and mental stimulation.",
+    price: 59.99,
+    discountPrice: 49.99,
+    countInStock: 25,
+    sku: "BRD-PG-023",
+    category: "Bird Toys",
+    brand: "BirdLife",
+    sizes: ["S", "M", "L"],
+    colors: ["Rainbow", "Natural"],
+    collections: "Active Play",
+    material: "Natural Wood, Safe Metals",
+    gender: "Unisex",
+    petType: "Birds",
+    images: [
+      {
+        url: "https://plus.unsplash.com/premium_photo-1664304957188-a2f67dd1f721",
+        altText: "Bird Play Gym"
+      },
+      {
+        url: "https://plus.unsplash.com/premium_photo-1668046490283-8fca695d50a8",
+        altText: "Bird on Play Gym"
+      }
+    ],
+    rating: 4.6,
+    numReviews: 22
+  },
+  // ... continue with more products using similar pattern and existing images
+];
+
+// Generate more products programmatically
+const petTypes = ["Dogs", "Cats", "Birds", "Small Pets"];
+const categories = {
+  Dogs: ["Clothing", "Accessories", "Toys", "Beds", "Grooming"],
+  Cats: ["Furniture", "Toys", "Accessories", "Grooming", "Beds"],
+  Birds: ["Cages", "Toys", "Accessories", "Food", "Health"],
+  "Small Pets": ["Housing", "Toys", "Accessories", "Exercise", "Care"]
+};
+
+const collections = ["Winter Collection", "Summer Essentials", "Luxury Living", "Basic Care", "Travel Gear", "Party Collection"];
+const brands = ["PawStyle", "FancyFeline", "BirdLife", "TinyFriends", "PetLuxe", "ComfortPets"];
+const materials = ["Cotton", "Nylon", "Plush", "Natural Wood", "Memory Foam", "Stainless Steel"];
+
+const imageUrls = [
+  {
+    url: "https://images.unsplash.com/photo-1640130960412-af425bde2be3",
+    altText: "Product View 1"
+  },
+  {
+    url: "https://plus.unsplash.com/premium_photo-1664371206022-59b8607e00ac",
+    altText: "Product View 2"
+  },
+  {
+    url: "https://plus.unsplash.com/premium_photo-1664304957188-a2f67dd1f721",
+    altText: "Product View 3"
+  }
+];
+
+// Generate remaining products
+for (let i = 0; i < 57; i++) {
+  const petType = petTypes[Math.floor(Math.random() * petTypes.length)];
+  const category = categories[petType][Math.floor(Math.random() * categories[petType].length)];
+  const basePrice = Math.floor(Math.random() * (150 - 15) + 15);
+  
+  additionalProducts.push({
+    name: `${petType} ${category} ${i + 24}`,
+    description: `High-quality ${category.toLowerCase()} for your ${petType.toLowerCase()}. Features premium materials and thoughtful design for maximum comfort and enjoyment.`,
+    price: basePrice.toFixed(2),
+    discountPrice: (basePrice * 0.85).toFixed(2),
+    countInStock: Math.floor(Math.random() * 50) + 10,
+    sku: `${petType.substring(0, 3).toUpperCase()}-${category.substring(0, 2).toUpperCase()}-${(i + 24).toString().padStart(3, '0')}`,
+    category: `${petType} ${category}`,
+    brand: brands[Math.floor(Math.random() * brands.length)],
+    sizes: ["S", "M", "L"],
+    colors: ["Blue", "Red", "Black", "Green"],
+    collections: collections[Math.floor(Math.random() * collections.length)],
+    material: materials[Math.floor(Math.random() * materials.length)],
+    gender: "Unisex",
+    petType: petType,
+    images: [
+      imageUrls[Math.floor(Math.random() * imageUrls.length)],
+      imageUrls[Math.floor(Math.random() * imageUrls.length)]
+    ],
+    rating: (Math.random() * (5 - 4) + 4).toFixed(1),
+    numReviews: Math.floor(Math.random() * 50) + 10
+  });
+}
+
+const allProducts = [...products, ...additionalProducts];
+
+module.exports = allProducts;

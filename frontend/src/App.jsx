@@ -25,13 +25,22 @@ import store from "./redux/store";
 import ProtectRoute from "./components/Common/ProtectRoute";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import CursorAnimation from './components/CursorAnimation';
 
 export default function App() {
   return (
     <Provider store={store}>
+      <CursorAnimation />
       <BrowserRouter>
         <Toaster position="top-right" reverseOrder={false} />
-        <ToastContainer position="top-right" autoClose={2000} />
+        <ToastContainer 
+          position="top-right" 
+          autoClose={2000}
+          className="!w-auto !max-w-[90vw] md:!max-w-md"
+          toastClassName="!rounded-xl !bg-white !shadow-lg !p-4 !min-h-0"
+          bodyClassName="!text-sm !text-pet-brown !p-0"
+          progressClassName="!bg-pet-brown"
+        />
         <Routes>
           <Route path="/" element={<UserLayout />}>
             <Route index element={<Home />} />

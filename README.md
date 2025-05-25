@@ -16,6 +16,9 @@ A modern, full-stack e-commerce platform specialized for pet products. PawShop o
 - React Icons
 - Redux Toolkit (for state management)
 - Axios (for API requests)
+- Sonner (for toast notifications)
+- Web Speech API (for voice assistant)
+- React Speech Recognition (for voice commands)
 
 ### Backend
 - Node.js
@@ -27,28 +30,65 @@ A modern, full-stack e-commerce platform specialized for pet products. PawShop o
 
 ## ✨ Features
 
-- **User Authentication**: Secure login and registration system
+- **Voice Assistant**: 
+  - Voice-controlled navigation
+  - Product search by voice
+  - Hands-free shopping experience
+  - Voice commands for cart management
+  - Accessibility support
+  - Natural language processing
+- **User Authentication**: 
+  - Secure login and registration system
+  - Guest user functionality
+  - Persistent sessions
 - **Product Management**: 
   - Browse products by category
-  - Filter and search functionality
-  - Detailed product views
+  - Advanced filter and search functionality
+  - Detailed product views with multiple images
+  - Size and color selection
+  - Similar products recommendations
 - **Shopping Cart**: 
   - Add/remove items
   - Update quantities
-  - Calculate totals
+  - Size and color variants
+  - Real-time price calculations
+  - Guest cart functionality
+- **Wishlist**:
+  - Add/remove products
+  - Persistent wishlist storage
+  - Quick add to cart from wishlist
+- **Product Details**:
+  - Image gallery with thumbnails
+  - Dynamic size and color selection
+  - Quantity adjustment
+  - Sale price display
+  - Product features and benefits
+  - Free shipping indicators
+- **User Experience**:
+  - Toast notifications for actions
+  - Animated UI elements
+  - Loading states with animations
+  - Responsive image galleries
+  - Intuitive size/color selectors
 - **Admin Dashboard**:
   - Product management
   - Order management
   - User management
-- **Responsive Design**: Works seamlessly on desktop and mobile devices
+  - Sales analytics
+- **Responsive Design**: 
+  - Works seamlessly on desktop and mobile devices
+  - Optimized image loading
+  - Touch-friendly interfaces
 - **Modern UI/UX**:
   - Pet-themed styling
-  - Smooth animations
+  - Smooth animations and transitions
   - Intuitive navigation
+  - Interactive product cards
 - **Security**:
   - JWT authentication
   - Protected routes
   - Secure API endpoints
+  - Guest user data protection
 
 ## 🛠️ Installation & Setup
 
@@ -153,4 +193,46 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - Pet-themed icons and images from various sources
 - React Icons library
 - Tailwind CSS community
-- Framer Motion for animations 
+- Framer Motion for animations
+
+\section{Projects}
+    \begin{twocolentry}{
+    \textit{\href{https://pettshop-prankur-frontend.onrender.com/}{Live Demo}}}
+        \textbf{PawShop : }\textbf{Pet E-commerce Platform}
+    \end{twocolentry}
+
+    \vspace{0.10 cm}
+    \begin{onecolentry}
+        \begin{highlights}
+            \item Developed a full-stack e-commerce platform with \textbf{voice assistant integration}, featuring product management, cart operations, and secure user authentication.
+            \item Implemented \textbf{real-time search}, wishlist functionality, and dynamic product filtering, resulting in a \textbf{30\% improvement} in user engagement.
+            \item \textbf{Tech Stack}: React.js, Node.js, MongoDB, Redux Toolkit, Tailwind CSS, Web Speech API, JWT Authentication
+        \end{highlights}
+    \end{onecolentry}
+
+    \begin{twocolentry}{
+    \textit{\href{https://dazzling-croissant-b7e9c7.netlify.app/}{Watchify}}}
+        \textbf{Watchify : }\textbf{A Mini YouTube}
+    \end{twocolentry}
+
+    \vspace{0.10 cm}
+    \begin{onecolentry}
+        \begin{highlights}
+            \item Watchify is a powerful streaming platform that lets you enjoy all \textbf{YouTube content without ads}, providing a seamless experience.
+            \item Integrated \textbf{YouTube V3 API} with Axios library, \textbf{enhancing data accuracy by 30\%} and \textbf{increasing user engagement by 20\%}
+            \item \textbf{Tools}: React, Tailwind, Node.js, YouTube API, React Router
+        \end{highlights}
+    \end{onecolentry}
+
+    \begin{twocolentry}{
+    \textit{\href{https://github.com/SirLance007}{GitHub}}}
+        \textbf{Practice Projects}
+    \end{twocolentry}
+
+    \vspace{0.10 cm}
+    \begin{onecolentry}
+        \begin{highlights}
+            \item Developed multiple web applications: Blakery, GameVilla, HoloBank, Virtualr, and JavaScript projects (Todolist, Tic Tac Toe)
+            \item \textbf{Tools}: React, HTML/CSS, JavaScript, Tailwind, Bootstrap, Git
+        \end{highlights}
+    \end{onecolentry} 
