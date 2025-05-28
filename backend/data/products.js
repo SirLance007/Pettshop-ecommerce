@@ -20,11 +20,11 @@ const products = [
     images: [
       {
         url: "https://images.unsplash.com/photo-1640130960412-af425bde2be3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y296eSUyMGRvZyUyMHN3ZWF0ZXJ8ZW58MHx8MHx8fDA%3D",
-        altText: "Cozy Dog Sweater Front View",
+        altText: "Dog Product View 1"
       },
       {
         url: "https://images.unsplash.com/photo-1697939829612-f2ee98421a53?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y296eSUyMGRvZyUyMHN3ZWF0ZXJ8ZW58MHx8MHx8fDA%3D",
-        altText: "Cozy Dog Sweater Front View",
+        altText: "Dog Product View 2"
       }
     ],
     rating: 4.5,
@@ -39,7 +39,7 @@ const products = [
     countInStock: 35,
     sku: "CAT-HL-002",
     category: "Cat Accessories",
-    brand: "SafePaws",
+    brand: "PetCo",
     sizes: ["S", "M", "L"],
     colors: ["Black", "Blue", "Pink", "Purple"],
     collections: "Outdoor Gear",
@@ -49,11 +49,11 @@ const products = [
     images: [
       {
         url: "https://plus.unsplash.com/premium_photo-1664371206022-59b8607e00ac?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        altText: "Cat Harness and Leash Set"
+        altText: "Cat Product View 1"
       },
       {
         url: "https://images.unsplash.com/photo-1712143093737-e94eccccef9a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Q2F0JTIwSGFybmVzcyUyMGFuZCUyMExlYXNoJTIwU2V0fGVufDB8fDB8fHww",
-        altText: "Cat Harness and Leash Set"
+        altText: "Cat Product View 2"
       }
     ],
     rating: 4.8,
@@ -68,7 +68,7 @@ const products = [
     countInStock: 15,
     sku: "BRD-CV-003",
     category: "Bird Accessories",
-    brand: "BirdLife",
+    brand: "Royal Canin",
     sizes: ["S", "M", "L", "XL"],
     colors: ["Navy", "Dark Green", "Black", "Brown"],
     collections: "Essential Care",
@@ -78,11 +78,11 @@ const products = [
     images: [
       {
         url: "https://plus.unsplash.com/premium_photo-1664304957188-a2f67dd1f721?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fEJpcmQlMjBDYWdlJTIwQ292ZXJ8ZW58MHx8MHx8fDA%3D",
-        altText: "Bird Cage Cover"
+        altText: "Bird Product View 1"
       },
       {
         url: "https://plus.unsplash.com/premium_photo-1668046490283-8fca695d50a8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fEJpcmQlMjBDYWdlJTIwQ292ZXJ8ZW58MHx8MHx8fDA%3D",
-        altText: "Bird Cage Cover"
+        altText: "Bird Product View 2"
       }
     ],
     rating: 4.6,
@@ -97,7 +97,7 @@ const products = [
     countInStock: 25,
     sku: "SML-EB-004",
     category: "Small Pet Accessories",
-    brand: "TinyFriends",
+    brand: "Zanzmer",
     sizes: ["S", "M"],
     colors: ["Clear", "Blue", "Pink", "Green"],
     collections: "Exercise Equipment",
@@ -126,7 +126,7 @@ const products = [
     countInStock: 30,
     sku: "DOG-RC-005",
     category: "Dog Clothing",
-    brand: "PawStyle",
+    brand: "PawIndia",
     sizes: ["S", "M", "L", "XL"],
     colors: ["Yellow", "Orange", "Blue", "Black"],
     collections: "Rainy Day Essentials",
@@ -672,23 +672,51 @@ const categories = {
 };
 
 const collections = ["Winter Collection", "Summer Essentials", "Luxury Living", "Basic Care", "Travel Gear", "Party Collection"];
-const brands = ["PawStyle", "FancyFeline", "BirdLife", "TinyFriends", "PetLuxe", "ComfortPets"];
+const brands = ["PawStyle", "PetCo", "Royal Canin", "Zanzmer", "PawIndia"];
 const materials = ["Cotton", "Nylon", "Plush", "Natural Wood", "Memory Foam", "Stainless Steel"];
 
-const imageUrls = [
-  {
-    url: "https://images.unsplash.com/photo-1640130960412-af425bde2be3",
-    altText: "Product View 1"
-  },
-  {
-    url: "https://plus.unsplash.com/premium_photo-1664371206022-59b8607e00ac",
-    altText: "Product View 2"
-  },
-  {
-    url: "https://plus.unsplash.com/premium_photo-1664304957188-a2f67dd1f721",
-    altText: "Product View 3"
-  }
-];
+const imageUrls = {
+  Dogs: [
+    {
+      url: "https://images.unsplash.com/photo-1640130960412-af425bde2be3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y296eSUyMGRvZyUyMHN3ZWF0ZXJ8ZW58MHx8MHx8fDA%3D",
+      altText: "Dog Product View 1"
+    },
+    {
+      url: "https://images.unsplash.com/photo-1697939829612-f2ee98421a53?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y296eSUyMGRvZyUyMHN3ZWF0ZXJ8ZW58MHx8MHx8fDA%3D",
+      altText: "Dog Product View 2"
+    }
+  ],
+  Cats: [
+    {
+      url: "https://plus.unsplash.com/premium_photo-1664371206022-59b8607e00ac?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      altText: "Cat Product View 1"
+    },
+    {
+      url: "https://images.unsplash.com/photo-1712143093737-e94eccccef9a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Q2F0JTIwSGFybmVzcyUyMGFuZCUyMExlYXNoJTIwU2V0fGVufDB8fDB8fHww",
+      altText: "Cat Product View 2"
+    }
+  ],
+  Birds: [
+    {
+      url: "https://plus.unsplash.com/premium_photo-1664304957188-a2f67dd1f721?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fEJpcmQlMjBDYWdlJTIwQ292ZXJ8ZW58MHx8MHx8fDA%3D",
+      altText: "Bird Product View 1"
+    },
+    {
+      url: "https://plus.unsplash.com/premium_photo-1668046490283-8fca695d50a8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fEJpcmQlMjBDYWdlJTIwQ292ZXJ8ZW58MHx8MHx8fDA%3D",
+      altText: "Bird Product View 2"
+    }
+  ],
+  "Small Pets": [
+    {
+      url: "https://images.unsplash.com/photo-1556568575-6c09e7df1441",
+      altText: "Small Pet Product View 1"
+    },
+    {
+      url: "https://images.unsplash.com/photo-1592159371936-61a70cbeb5f7",
+      altText: "Small Pet Product View 2"
+    }
+  ]
+};
 
 // Generate remaining products
 for (let i = 0; i < 57; i++) {
@@ -711,10 +739,7 @@ for (let i = 0; i < 57; i++) {
     material: materials[Math.floor(Math.random() * materials.length)],
     gender: "Unisex",
     petType: petType,
-    images: [
-      imageUrls[Math.floor(Math.random() * imageUrls.length)],
-      imageUrls[Math.floor(Math.random() * imageUrls.length)]
-    ],
+    images: imageUrls[petType],
     rating: (Math.random() * (5 - 4) + 4).toFixed(1),
     numReviews: Math.floor(Math.random() * 50) + 10
   });
