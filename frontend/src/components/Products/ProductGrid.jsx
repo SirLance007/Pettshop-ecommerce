@@ -73,9 +73,6 @@ const ProductGrid = ({ products, loading, error }) => {
                   alt={imageAlt}
                 />
                 <div className="absolute inset-0 bg-pet-brown/20 rounded-2xl transform scale-90 opacity-0 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300"></div>
-                <span className="absolute top-2 right-2 bg-white/95 text-pet-brown text-xs px-3 py-1 rounded-full font-bold tracking-wide opacity-0 group-hover:opacity-100 transition-all duration-300 z-20 flex items-center gap-1">
-                  <FaPaw className="w-3 h-3" /> View
-                </span>
               </div>
 
               {/* Product Info */}
