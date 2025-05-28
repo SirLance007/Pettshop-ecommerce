@@ -95,7 +95,7 @@ const Register = () => {
               <div className="text-center mb-8 transform hover:scale-105 transition-transform duration-300">
                 <div className="flex justify-center items-center mb-4">
                   <span className="text-5xl animate-bounce-gentle">🐾</span>
-                  <h2 className="text-3xl font-extrabold text-pet-brown ml-3">PetPal</h2>
+                  <h2 className="text-3xl font-extrabold text-pet-brown ml-3">PawShop</h2>
                 </div>
                 <h2 className="text-4xl font-bold text-pet-brown mb-2">Join Our Pack!</h2>
                 <p className="text-pet-brown/60">Create an account to start shopping for your furry friends</p>

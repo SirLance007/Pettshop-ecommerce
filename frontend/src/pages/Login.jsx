@@ -84,7 +84,7 @@ const Login = () => {
               <div className="text-center mb-8 transform hover:scale-105 transition-transform duration-300">
                 <div className="flex justify-center items-center mb-4">
                   <span className="text-5xl animate-bounce-gentle">🐾</span>
-                  <h2 className="text-3xl font-extrabold text-pet-brown ml-3">PetPal</h2>
+                  <h2 className="text-3xl font-extrabold text-pet-brown ml-3">PawShop</h2>
                 </div>
                 <h2 className="text-4xl font-bold text-pet-brown mb-2">Welcome Back!</h2>
                 <p className="text-pet-brown/60">Sign in to your account to continue shopping for your furry friend</p>
@@ -207,7 +207,7 @@ const Login = () => {
             />
             <div className="absolute inset-0 flex items-end p-12 z-20 bg-gradient-to-t from-black/60 via-transparent to-transparent">
               <div className="text-white max-w-md">
-                <h3 className="text-3xl font-bold mb-4">Welcome Back to PetPal</h3>
+                <h3 className="text-3xl font-bold mb-4">Welcome Back to PawShop</h3>
                 <p className="text-lg text-white/90 mb-6">Your furry friends have been waiting for you! Continue your pet care journey with us.</p>
                 <div className="flex gap-4">
                   <div className="flex items-center gap-2">
